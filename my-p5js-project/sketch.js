@@ -1,7 +1,23 @@
 function setup() {
-    createCanvas(800, 600);
-}
+    // Create the canvas
+    createCanvas(710, 400);
 
-function draw() {
-    background(220);
-}
+    // Set background to black
+    background(255);
+
+    // Set width of the lines
+    strokeWeight(10);
+
+    // Set color mode to hue-saturation-brightness (HSB)
+    // color(0, 0, 0);
+
+    // Set screen reader accessible description
+    describe('A blank canvas where the user draws by dragging the mouse');
+  }
+
+  function mouseDragged() {
+    // Set the color based on the mouse position, and draw a line
+    // from the previous position to the current position
+    stroke('black', 90, 90);
+    line(pmouseX, pmouseY, mouseX, mouseY);
+  }
