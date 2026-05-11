@@ -1,7 +1,7 @@
 function setup() {
     // Create the canvas
     createCanvas(1200, 700);
-    myPicker = createColorPicker("deeppink");
+    myPicker = createColorPicker("black");
     myPicker.position(80,50);
 
     // Set background to black
@@ -20,6 +20,6 @@ function setup() {
   function mouseDragged() {
     // Set the color based on the mouse position, and draw a line
     // from the previous position to the current position
-    stroke('black', 90, 90);
+    stroke(myPicker.color(), 90, 90);
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
