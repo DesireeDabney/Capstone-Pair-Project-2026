@@ -1,6 +1,8 @@
 function setup() {
     // Create the canvas
-    createCanvas(710, 400);
+    createCanvas(1200, 700);
+    myPicker = createColorPicker("deeppink");
+    myPicker.position(80,50);
 
     // Set background to black
     background(255);
