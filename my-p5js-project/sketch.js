@@ -10,8 +10,7 @@ function setup() {
     // Set width of the lines
     strokeWeight(10);
 
-    // Set color mode to hue-saturation-brightness (HSB)
-    // color(0, 0, 0);
+    saveState();
 
     // Set screen reader accessible description
     describe('A blank canvas where the user draws by dragging the mouse');
