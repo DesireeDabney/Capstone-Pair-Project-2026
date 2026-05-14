@@ -1,8 +1,11 @@
-let borderwidth = document.getElementById("borderwidth");
+// getting variables from index.html
+const borderWidth = document.getElementById("borderWidth");
+const canvasName = document.getElementById("saveName");
 
 // Event Listeners to make sure border width is greater than 1 but less than 100 at all times
-borderwidth.addEventListener("keyup", checkNum);
-borderwidth.addEventListener("click", checkNum);
+borderWidth.addEventListener("keyup", checkNum);
+borderWidth.addEventListener("click", checkNum);
+
 function setup() {
   // Create the canvas
   createCanvas(1200, 700);
@@ -21,20 +24,18 @@ function setup() {
 
   // Button in html that save canvas without resetting
   document.getElementById('canvasSave').addEventListener('click', () => {
-    saveCanvas();
+    saveCanvas(canvasName.value);
   })
 }
 
 // Function for regex
 function checkNum() {
-  console.log("test");
-  if (borderwidth.value >= 100) borderwidth.value = 100;
-  console.log(borderwidth.value); 
-  if (borderwidth.value <= 1) borderwidth.value = 1; 
+  if (borderWidth.value >= 100) borderWidth.value = 100;
+  if (borderWidth.value <= 1) borderWidth.value = 1; 
 };
  
 function mouseDragged() {
-  strokeWeight(borderwidth.value);
+  strokeWeight(borderWidth.value);
   stroke(myPicker.color(), 90, 90);
   line(pmouseX, pmouseY, mouseX, mouseY);
 }

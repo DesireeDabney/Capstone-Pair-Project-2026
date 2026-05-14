@@ -11,3 +11,42 @@ body {
     min-height: 100vh;
     background: #f0f0f0;
 }
+
+#borderWidthLabel{
+    top:80px; 
+    left:40px; 
+    position: absolute;
+}
+
+#borderWidth{
+    top: 100px; 
+    left:70px;
+    position: absolute;
+}
+
+#canvasSave{
+    top: 165px; 
+    left: 58px; 
+    position: absolute;
+    color: green;
+    background-color: white;
+    border: black 2px solid;
+    padding: 5px;
+}
+
+#canvasSave:active{
+    background-color: gray;
+}
+
+#saveNameLabel{
+    position: absolute;
+    top: 120px;
+    left: 55px;
+}
+
+#saveName{
+    position: absolute;
+    top: 140px;
+    left: 55px;
+    width: 100px;
+}
