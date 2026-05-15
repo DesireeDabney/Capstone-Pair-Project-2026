@@ -36,6 +36,10 @@ function checkNum() {
  
 function mouseDragged() {
   strokeWeight(borderWidth.value);
-  stroke(myPicker.color(), 90, 90);
+   if (eraserMode) {
+    stroke(255);
+  } else {
+    stroke(myPicker.color());
+  }
   line(pmouseX, pmouseY, mouseX, mouseY);
 }
