@@ -23,10 +23,13 @@ function undoToPreviousState() {
   previousState = null;
 }
 
-function mousePressed() {
-  // the moment input is detect save the state
-  saveState();
+function mousePressed(event) {
+  // Check if event exists and if target is the canvas
+  if (event && event.target && event.target.tagName === "CANVAS") {
+    saveState();
+  }
 }
+
 
 function saveState() {
   // save state by taking image of background
