@@ -9,13 +9,15 @@
 
 </head>
 <body>
-    <label for="borderWidth" id="borderWidthLabel">Brush Size (1-100)</label>
+    <label for="borderWidth" id="borderWidthLabel">Size (1-100)</label>
     <input id="borderWidth" type="number" min="0" max="100" step="5" value="10">
     <label for="saveName" id="saveNameLabel">Name Drawing</label>
     <input type="text" id="saveName" placeholder="untitled.png" value="untitled.png">
     <button id="canvasSave">Save Canvas</button>
     <button style="top: 210px; left:80px; position: absolute;" onclick="undoToPreviousState()"><img src="undo.png" style="width: 40px; height: 40px;"></button>
+    <button id="eraserToggle" style="top:270px; left:80px; position:absolute;">Eraser</button>
     <script src="sketch.js"></script>
     <script src="undo.js"></script>
+    <script src="eraser.js"></script>
 </body>
 </html>
