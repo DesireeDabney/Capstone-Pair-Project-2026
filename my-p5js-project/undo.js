@@ -12,8 +12,8 @@ function keyPressed(e) {
 function undoToPreviousState() {
   // if previousState doesn't exist ie is null
   // return without doing anything
-  if (!previousState) {
-    return;
+    if (!previousState) {
+      return;
   }
   // else draw the background (in this case white)
   // and draw the previous state
