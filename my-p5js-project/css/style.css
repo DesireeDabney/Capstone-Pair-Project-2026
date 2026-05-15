@@ -50,3 +50,21 @@ body {
     left: 55px;
     width: 100px;
 }
+
+#eraserToggle{
+    top: 270px;
+    left: 58px;
+    position: absolute;
+
+    color: red;
+    background-color: white;
+
+    border: black 2px solid;
+    padding: 5px;
+
+    width: 100px;
+}
+
+#eraserToggle:active{
+    background-color: gray;
+}
