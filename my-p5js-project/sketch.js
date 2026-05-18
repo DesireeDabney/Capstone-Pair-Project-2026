@@ -1,14 +1,23 @@
 // getting variables from index.html
 const borderWidth = document.getElementById("borderWidth");
 const canvasName = document.getElementById("saveName");
-
-// Event Listeners to make sure border width is greater than 1 but less than 100 at all times
+const clearStorage = document.getElementById("clearStorage");
+// save canvas as a variable name for later use
+let canvas;
+// Event Listeners for buttons/inputs
 borderWidth.addEventListener("keyup", checkNum);
 borderWidth.addEventListener("click", checkNum);
+clearStorage.addEventListener("click", clearCanvasStorage);
 
 function setup() {
   // Create the canvas
-  createCanvas(1200, 700);
+   canvas = createCanvas(1200, 700);
+
+     if (getItem('savedCanvas')) {
+    loadImage(getItem('savedCanvas'), img => {
+      image(img, 0, 0, width, height);
+    });
+  }
   // Create color picker
   myPicker = createColorPicker("black");
   myPicker.position(80, 50);
@@ -33,7 +42,7 @@ function checkNum() {
   if (borderWidth.value >= 100) borderWidth.value = 100;
   if (borderWidth.value <= 1) borderWidth.value = 1; 
 };
- 
+
 function mouseDragged() {
   strokeWeight(borderWidth.value);
    if (eraserMode) {
@@ -42,4 +51,15 @@ function mouseDragged() {
     stroke(myPicker.color());
   }
   line(pmouseX, pmouseY, mouseX, mouseY);
+  
+}
+
+// function to save the canvas whenever the mouse is released into local storage
+function mouseReleased() {
+  console.log('savedCanvas', canvas.elt.toDataURL());
+  storeItem('savedCanvas', canvas.elt.toDataURL());
+}
+
+function clearCanvasStorage(){
+  removeItem('savedCanvas');
 }
