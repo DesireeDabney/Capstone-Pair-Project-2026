@@ -11,7 +11,7 @@ clearStorage.addEventListener("click", clearCanvasStorage);
 
 function setup() {
   // Create the canvas
-   canvas = createCanvas(1200, 700);
+  canvas = createCanvas(1200, 700);
 
      if (getItem('savedCanvas')) {
     loadImage(getItem('savedCanvas'), img => {
@@ -24,7 +24,7 @@ function setup() {
   // Title for color picker
   let p = createP("Color");
   p.position(85, 30);
-  // Set background to black
+  // Set background to gray
   background(255);
   // Function in undo.js
   saveState();
@@ -62,4 +62,6 @@ function mouseReleased() {
 
 function clearCanvasStorage(){
   removeItem('savedCanvas');
+  clear();
+  background(255);
 }
