@@ -66,7 +66,6 @@ function mouseDragged() {
 
 // function to save the canvas whenever the mouse is released into local storage
 function mouseReleased() {
-  console.log('savedCanvas', canvas.elt.toDataURL());
   storeItem('savedCanvas', canvas.elt.toDataURL());
 }
 
