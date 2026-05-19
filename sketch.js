@@ -73,5 +73,5 @@ function mouseReleased() {
 function clearCanvasStorage(){
   removeItem('savedCanvas');
   clear();
-  background(255);
+  background(myBackground.color());
 }
