@@ -20,19 +20,10 @@ function setup() {
   }
   // Create color picker for brush
   myPicker = createColorPicker("black");
-  myPicker.position(80, 50);
-  // Create color picker for background
-  myBackground = createColorPicker("white");
-  myBackground.position(80, 370);
-  myBackground.elt.addEventListener("input", () => {
-    background(myBackground.color());
-  });
+  myPicker.position(80, 50); 
   // Title for brush
   let p = createP("Color");
   p.position(85, 30);
-  // Title for background
-  let p2 = createP("Background");
-  p2.position(70, 345);
   // Set background to white
   background(255);
   // Function in undo.js
@@ -72,5 +63,5 @@ function mouseReleased() {
 function clearCanvasStorage(){
   removeItem('savedCanvas');
   clear();
-  background(myBackground.color());
+  background(255);
 }
